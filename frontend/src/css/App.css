@@ -1,0 +1,116 @@
+.top-bar {
+  background-color: #fff;
+  width: 100%;
+  height: 40px;
+  line-height: 40px; /* 顶栏的高度，根据实际情况进行调整 */
+  text-align: center; /* 水平居中对齐 */
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  border: 2px solid #e5e7eb;
+}
+
+.top-bar .logo {
+  width: 200px; /* 根据实际需要调整Logo的宽度 */
+  position: absolute;
+  top: 0px;
+  left: 20px; 
+  cursor: pointer;
+}
+
+.top-bar nav {
+  margin-left: 225px; /* 根据实际需要调整右边距的大小，确保不会与 Logo 发生重叠 */
+}
+
+.top-bar ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 50px;
+}
+
+.top-bar ul li:not(:last-child) {
+  margin-right: 3rem;
+}
+
+.top-bar ul li {
+  color: rgb(14, 8, 8);
+  margin-right: 10px;
+}
+.menu-items li {
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 60px); 
+  /* height: 100vh; */
+  margin-top: 60px;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #fff;
+  padding: 10px;
+  border: 2px solid #e5e7eb;
+}
+
+.content {
+  flex-grow: 1;
+  width: calc(100vw - 250px);
+  padding: 20px;
+  background-color: #f5f5f5;
+  /* overflow: auto; */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.sidebar ul ul {
+  margin-left: 10px;
+}
+
+.sidebar ul li {
+  cursor: pointer;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.sidebar ul li:hover {
+  background-color: #bbd0ff;
+}
+
+.sidebar ul li.selected {
+  background-color: #bbd0ff;
+}
+
+.sidebar ul ul li {
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+
+.custom-arrow {
+  float: right;
+  color:rgb(14, 92, 238);
+}
+
+.dropdown-link {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:active {
+  color: black;
+}

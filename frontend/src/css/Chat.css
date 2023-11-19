@@ -1,0 +1,97 @@
+/* ChatApp.css */
+
+.chat-app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 95%;
+  
+}
+
+.message-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  border: 1px solid #575555;
+  border-radius: 10px;
+  /* Add styles for scrollable message list */
+}
+
+.message {
+  display: flex;
+  /* background-color: #f2f2f2; */
+  padding: 10px;
+  margin-bottom: 10px;
+  /* flex-direction: column; */
+  /* Add styles for individual messages */
+}
+
+.user-message {
+  justify-content: flex-start;
+}
+
+.ai-message {
+  justify-content: flex-end;
+}
+
+.username {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.message-text {
+  background-color: #3a86ff;
+  color: white;
+  font-size: 20px;
+  padding: 8px;
+  border-radius: 10px;
+  /* Add styles for message text */
+}
+
+
+/* .message-timestamp {
+  font-size: 12px;
+  color: #777;
+  margin-top: 4px;
+} */
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  /* 添加更多的样式属性来自定义头像样式 */
+}
+
+.message-input {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  /* padding: 0 10px; */
+  /* Add styles for message input section */
+}
+
+.message-input input {
+  flex-grow: 1;
+  height: 30px;
+  padding: 5px;
+  font-size: 20px;
+  margin-right: 10px;
+  margin-left: 0px;
+  width: 200px;
+  /* Add styles for message input field */
+}
+
+.message-input button {
+  height: 40px;
+  width: 120px;
+  padding: 10px;
+  /* padding: 5px 10px; */
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  /* Add styles for send button */
+}
+

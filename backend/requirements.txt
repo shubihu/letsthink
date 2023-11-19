@@ -1,0 +1,5 @@
+fastapi==0.104.1
+gevent_socketio==0.3.6
+openai==0.27.2
+psutil==5.9.3
+pydantic==1.10.5

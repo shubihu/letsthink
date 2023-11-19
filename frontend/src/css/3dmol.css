@@ -1,0 +1,32 @@
+.smdocking-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* overflow: auto; */
+  }
+  
+  .protein-container {
+    display: grid;
+    grid-template-columns: 75% 20%;
+    gap: 10px;
+    height: 100%;
+  }
+  
+  /* .upload-form {
+    grid-column: 1;
+  } */
+  
+  .display-box {
+    grid-column: 1;
+    background-color: white;
+    position: relative;
+  }
+  
+  .control-form {
+    grid-column: 2;
+  }
+  
+  /* 其他样式省略 */
