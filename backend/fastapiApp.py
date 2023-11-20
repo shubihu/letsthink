@@ -1,4 +1,5 @@
 import sys
+import ssl
 import socketio
 from fastapi import FastAPI, BackgroundTasks, Request, WebSocket
 from fastapi.staticfiles import StaticFiles
@@ -13,7 +14,11 @@ class Message(BaseModel):
 
 app = FastAPI()
 
-sio = socketio.AsyncServer(async_mode='asgi', cors_allowed_origins='*')
+context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
+context.load_cert_chain('/home/yahaha/think/ssl/letsthink.top_bundle.crt', '/home/yahaha/think/ssl/letsthink.top.key')
+
+sio = socketio.AsyncServer(async_mode='asgi', cors_allowed_origins='*', ssl_context=context)
+# sio = socketio.AsyncServer(async_mode='asgi', cors_allowed_origins='*')
 socket_app = socketio.ASGIApp(sio)
 
 app.mount("/ws", socket_app)
@@ -81,7 +86,7 @@ async def receive_message(sid, message):
 
 
 if __name__ == '__main__':
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000, ssl_certfile='/home/yahaha/think/ssl/letsthink.top_bundle.crt', ssl_keyfile='/home/yahaha/think/ssl/letsthink.top.key')
 
 
 
