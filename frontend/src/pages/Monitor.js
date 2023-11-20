@@ -10,8 +10,9 @@ const Monitor = () => {
   const chartMemoryRef = useRef(null);
 
   useEffect(() => {
-    socketRef.current = io("http://183.232.150.130:1080", {path:'/ws/socket.io', autoConnect: true}); // 替换为FastAPI服务器的地址
-    
+    // socketRef.current = io("http://172.190.79.138:8000", {path:'/ws/socket.io', autoConnect: true}); // 替换为FastAPI服务器的地址
+    socketRef.current = io("http://letsthink.top", {path:'/ws/socket.io', autoConnect: true});
+    // socketRef.current = io("http://172.190.79.138:8000")
     chartCpuRef.current = echarts.init(chartCpuRef.current);
     chartMemoryRef.current = echarts.init(chartMemoryRef.current);
 

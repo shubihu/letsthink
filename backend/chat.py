@@ -1,10 +1,21 @@
 import openai
 
-openai.api_key = "填写密钥"    # Azure 的密钥
+openai.api_key = "*****"    # Azure 的密钥
 openai.api_base = "https://digitalgeneai.openai.azure.com/"  # Azure 的终结点
 openai.api_type = "azure" 
 openai.api_version = "2023-03-15-preview" # API 版本，未来可能会变
-model = "模型名称"  # 模型的部署名
+model = "*****"  # 模型的部署名
+
+from sparkdesk_api.core import SparkAPI
+# 默认api接口版本为3.1，配置其他版本需要指定Version参数（2.1或者1.1）
+sparkAPI = SparkAPI(
+    app_id='*****',
+    api_secret='*****',
+    api_key='*****',
+    # version=2.1
+)
+
+# sparkAPI.chat("hello")
 
 dialogue_history = [{"role": "system", "content": "You are a helpful assistant."}]
 
@@ -38,4 +49,10 @@ def chat(message):
         ai_reply = ''
 
     return ai_reply
+
+def chatSpark(message):
+    ai_reply = sparkAPI.chat(message['message'])
+    return ai_reply
+
+
 

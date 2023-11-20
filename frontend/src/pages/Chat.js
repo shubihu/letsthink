@@ -98,7 +98,7 @@ function ChatApp() {
 
   useEffect(() => {
     // 创建 WebSocket 连接
-    socketRef.current = io("http://183.232.150.130:1080", {path:'/ws/socket.io', autoConnect: true});
+    socketRef.current = io("http://letsthink.top", {path:'/ws/socket.io', autoConnect: true});
     // 监听 WebSocket 接收到的消息
     socketRef.current.on('response', (message) => {
       const newMessage = {

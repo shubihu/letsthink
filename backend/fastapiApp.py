@@ -5,7 +5,7 @@ from fastapi.staticfiles import StaticFiles
 import psutil
 from pydantic import BaseModel
 
-from chat import chat
+from chat import chat, chatSpark
 
 class Message(BaseModel):
     text: str
@@ -74,7 +74,8 @@ async def receive_message(sid, message):
     # 例如，可以调用 chat() 函数对消息进行处理
     # 然后将结果发送回前端使用 sio.emit() 方法
     # print(message)
-    res = chat(message)
+    # res = chat(message)
+    res = chatSpark(message)
     await sio.emit('response', res, to=sid)
 
 
