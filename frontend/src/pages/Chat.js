@@ -1,93 +1,7 @@
-// import React, { useState } from 'react';
-// import axios from 'axios';
-// import '../css/Chat.css';
-// // 导入需要的图片或图标等资源
-
-// function ChatApp() {
-//   const [messages, setMessages] = useState([]);
-//   const [inputValue, setInputValue] = useState('');
-
-//   const handleSendMessage = async () => {
-//     if (inputValue.trim() !== '') {
-//       const userMessage = {
-//         id: messages.length + 1,
-//         text: inputValue,
-//         timestamp: new Date().toLocaleTimeString(),
-//         avatar: 'path_to_avatar_image',
-//         type: 'user', // 添加一个type属性，表示用户消息
-//       };
-
-//       const updatedMessages = [...messages, userMessage];
-//       setMessages(updatedMessages);
-//       setInputValue('');
-
-//       try {
-//         const response = await axios.post('http://183.232.150.130:1080/aichat', { text: inputValue });
-
-
-//         const aiMessage = {
-//           id: messages.length + 2,
-//           text: response.data.message,
-//           timestamp: new Date().toLocaleTimeString(),
-//           avatar: 'path_to_avatar_image',
-//           type: 'ai', // 添加一个type属性，表示AI回答
-//         };
-
-//         const updatedMessagesWithAiMessage = [...updatedMessages, aiMessage];
-//         setMessages(updatedMessagesWithAiMessage);
-//       } catch (error) {
-//         console.error(error);
-//       }
-//     }
-//   };
-
-//   const handleKeyDown = (e) => {
-//     if (e.key === 'Enter') {
-//       handleSendMessage();
-//     }
-//   };
-
-//   const handleClearInput = () => {
-//     setInputValue('');
-//     setMessages([]);
-//   };
-
-//   return (
-//     <div className="chat-app">
-//       <p>Let's Think</p>
-//       <div className="message-list">
-//         {messages.map((message) => (
-//           <div
-//             key={message.id}
-//             className={`message ${message.type === 'user' ? 'user-message' : 'ai-message'}`}
-//           >
-//             <div className="username">{message.type === 'user' ? 'User:' : 'AI:'}</div>
-//             <div className="message-text">{message.text}</div>
-//             <div className="message-timestamp">{message.timestamp}</div>
-//           </div>
-//         ))}
-//       </div>
-//       <div className="message-input">
-//         <button onClick={handleClearInput}>Clear</button>
-//         <input
-//           type="text"
-//           value={inputValue}
-//           onChange={(e) => setInputValue(e.target.value)}
-//           onKeyDown={handleKeyDown}
-//           placeholder="Type your message..."
-//         />
-//         <button onClick={handleSendMessage}>Send</button>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default ChatApp;
-
 import React, { useState, useEffect, useRef } from 'react';
 import '../css/Chat.css';
 import io from 'socket.io-client';
-import logo from './logo.png';
+
 
 function ChatApp() {
   const [messages, setMessages] = useState([]);
@@ -98,7 +12,7 @@ function ChatApp() {
 
   useEffect(() => {
     // 创建 WebSocket 连接
-    socketRef.current = io("http://letsthink.top", {path:'/ws/socket.io', autoConnect: true});
+    socketRef.current = io("https://letsthink.top", {path:'/ws/socket.io', autoConnect: true});
     // 监听 WebSocket 接收到的消息
     socketRef.current.on('response', (message) => {
       const newMessage = {
@@ -108,6 +22,7 @@ function ChatApp() {
         avatar: 'path_to_avatar_image',
         type: 'ai',
       };
+
       setShowThinking(false);
       setMessages((prevMessages) => [...prevMessages, newMessage]);
     });
@@ -181,6 +96,12 @@ function ChatApp() {
           <div className="message ai-message">
             <div className="username">AI:</div>
             <div className="message-text">Let's Think...</div>
+            <div className="newtons-cradle">
+              <div className="newtons-cradle__dot"></div>
+              <div className="newtons-cradle__dot"></div>
+              <div className="newtons-cradle__dot"></div>
+              <div className="newtons-cradle__dot"></div>
+            </div>
           </div>
         )}
         <div ref={messagesEndRef} /> {/* 用于滚动到底部 */}
@@ -193,7 +114,18 @@ function ChatApp() {
           onKeyDown={handleKeyDown}
           placeholder="Type your message..."
         />
-        <button style={{ marginRight: '10px' }} onClick={handleSendMessage}>Send</button>
+        {/* <button style={{ marginRight: '10px' }} onClick={handleSendMessage}>Send</button> */}
+        <button style={{ marginRight: '10px' }} onClick={handleSendMessage}>
+          <div className="svg-wrapper-1">
+            <div className="svg-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z" />
+              </svg>
+            </div>
+        </div>
+        <span>Send</span>
+        </button>
         <button onClick={handleClearInput}>Clear</button>
       </div>
     </div>
