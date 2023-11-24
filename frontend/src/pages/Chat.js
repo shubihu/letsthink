@@ -79,7 +79,7 @@ function ChatApp() {
 
   return (
     <div className="chat-app">
-      <p>AI 聊天</p>
+      <p>AI 聊天(使用的是讯飞星火大模型,支持联网查询,比如天气)。如果想使用原生ChatGPT, 这里有大佬共享的。<a href="https://chat1.geekgpt.org">点我直达ChatGPT</a> <a href='https://chat-shared3.zhile.io/shared.html?v=2'>更多GPT</a></p>
       {/* <img src={logo} alt="Logo" style={{ width: '200px', height: '50px' }} /> */}
       <div className="message-list">        
         {messages.map((message) => (

@@ -40,6 +40,40 @@
   color: rgb(14, 8, 8);
   margin-right: 10px;
 }
+
+.link-container {
+  width: 200px;
+  float: right;
+  margin-right: 50px;
+}
+.link-container a {
+  margin-right: 16px; 
+
+}
+
+.link-container a svg{
+  width: 30px;
+  height: 30px;
+  cursor: pointer; 
+}
+
+.hover-image {
+  display: none;
+  position: absolute; /* 或其他定位方式，视需求而定 */
+  width: 200px; /* 按需设置 */
+  height: auto; /* 按需设置 */
+  z-index: 100; /* 确保图片显示在其他内容之上 */
+}
+
+/* 当鼠标悬停在链接上时，显示图片 */
+a:hover .hover-image {
+  display: block;
+}
+
+.link-container a:last-child {
+  margin-right: 0;
+}
+
 .menu-items li {
   font-weight: bold;
 }
