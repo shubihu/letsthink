@@ -1,0 +1,18 @@
+{
+	"nav-example":"示例功能",
+    "monitor-content":"系统监控",
+    "chat-content": "AI 聊天",
+    "3dmol-content": "3dmol 示例",
+    "welcome-title":"欢迎来到 Let's think 小破站",
+    "welcome-des1":"这是使用 React 和 Fastapi 开发的示例程序, 仅作为学习使用。",
+    "welcome-des2":"服务器是薅的微软家的(1核1G, 新用户第一年免费), 域名是薅的硅云家的(新用户第一年免费), Logo是使用的是企鹅家的AIDesign免费设计的, ssl证书是腾讯云提供一年免费证书, cdn是使用cloudflare的免费计划。所以这个网站整体就是免费薅来的, 后续嘛, 来日方长就先不考虑了, 薅完当下再说。",
+    "openSource":"开源地址: https://github.com/shubihu/letsthink.git",
+    "monitor-p1":"服务器系统监控",
+    "monitor-p2":"服务器资源情况: 1cpu 1线程, 内存1G",
+    "monitor-cpu":"CPU使用率: ",
+    "monitor-mem":"内存使用率: ",
+    "chat-p":"AI 聊天(使用的是讯飞星火大模型,支持联网查询,比如天气)。如果想使用原生ChatGPT, 这里有大佬共享的。",
+    "chat-a1":"点我直达ChatGPT, ",
+    "chat-a2":"更多GPT",
+    "3dmol-p":"这是一个3dmol例子, 一般人应该用不到"
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import io from "socket.io-client";
 import * as echarts from 'echarts';
+import { useCustomTranslation } from '../assets/useCustomTranslation';
 
 const Monitor = () => {
   const [cpuUsage, setCpuUsage] = useState("0");
@@ -9,9 +10,11 @@ const Monitor = () => {
   const chartCpuRef = useRef(null);
   const chartMemoryRef = useRef(null);
 
+  const { t } = useCustomTranslation();
+
   useEffect(() => {
     // socketRef.current = io("http://172.190.79.138:8000", {path:'/ws/socket.io', autoConnect: true}); // 替换为FastAPI服务器的地址
-    socketRef.current = io("http://letsthink.top", {path:'/ws/socket.io', autoConnect: true});
+    socketRef.current = io("https://letsthink.top", {path:'/ws/socket.io', autoConnect: true});
     // socketRef.current = io("http://172.190.79.138:8000")
     chartCpuRef.current = echarts.init(chartCpuRef.current);
     chartMemoryRef.current = echarts.init(chartMemoryRef.current);
@@ -154,11 +157,11 @@ const Monitor = () => {
 
   return (
     <div className="child1-content" >
-       <p>服务器系统监控</p>
-       <p>服务器资源情况: 1cpu 1线程, 内存1G</p>
+       <p>{t('monitor-p1')}</p>
+       <p>{t('monitor-p2')}</p>
       <div style={{ display: 'flex' , gap: '20px'}}>
-        <p style={{ width: '45%' }}>CPU Usage: {cpuUsage}</p>
-        <p>Memory Usage: {memoryUsage}</p>
+        <p style={{ width: '45%' }}>{t('monitor-cpu')} {cpuUsage}</p>
+        <p>{t('monitor-mem')} {memoryUsage}</p>
       </div>
       <div className="chart-container" style={{ display: 'flex' , gap: '20px'}}>
         <div className="cpu-monitor" style={{ width: '45%', height: '400px' }} ref={chartCpuRef} />

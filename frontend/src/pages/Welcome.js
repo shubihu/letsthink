@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useCustomTranslation } from '../assets/useCustomTranslation';
 
 import '../css/welcome.css';
 
@@ -11,6 +12,8 @@ const WelcomePage = () => {
   const minutes = now.getMinutes().toString().padStart(2, '0');
   const seconds = now.getSeconds().toString().padStart(2, '0');
   const currentTime = `${hours}:${minutes}:${seconds}`;
+
+  const { t } = useCustomTranslation();
 
   return (
     <div className="welcome-page">
@@ -26,20 +29,18 @@ const WelcomePage = () => {
           <div className="infos">
             <a href="#">
               <span className="title">
-                欢迎来到 Let's think 小破站
+                {t('welcome-title')}
               </span>
             </a>
             <p className="description">
-              这是使用 React 和 Fastapi 开发的示例程序, 仅作为学习使用。
+              {t('welcome-des1')}
             </p>
             <p className="description">
-            服务器是薅的微软家的(1核1G, 新用户第一年免费), 域名是薅的硅云家的(新用户第一年免费), Logo是使用的是企鹅家的AIDesign免费设计的, 
-            ssl证书是腾讯云提供一年免费证书, cdn是使用cloudflare的免费计划。
-            所以这个网站整体就是免费薅来的, 后续嘛, 来日方长就先不考虑了, 薅完当下再说。
+              {t('welcome-des2')}
             </p>
           </div>
           <a className="action" href="https://github.com/shubihu/letsthink.git">
-            开源地址: https://github.com/shubihu/letsthink.git
+              {t('openSource')}
           </a>
         </div>
       </div>

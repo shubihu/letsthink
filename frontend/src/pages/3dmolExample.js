@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState }from 'react';
-
+import { useCustomTranslation } from '../assets/useCustomTranslation';
 import '../css/3dmol.css';
 
 const ThreedmolDemo = () => {
@@ -12,6 +12,8 @@ const ThreedmolDemo = () => {
   const [sizeH, setSizeH] = useState({ x: 0, y: 0, z: 0 });
   const [sizeD, setSizeD] = useState({ x: 0, y: 0, z: 0 });
   const [rotation, setRotation] = useState({ x: 0, y: 0, z: 0 });
+
+  const { t } = useCustomTranslation();
   
   useEffect(() => {
     var element1 = containerRef.current;
@@ -229,7 +231,7 @@ const ThreedmolDemo = () => {
   return (
     <div className="smdocking-container">
    
-      <p>这是一个3dmol例子, 一般人应该用不到</p>
+      <p>{t('3dmol-p')}</p>
       <div className="protein-container">
         <div className="display-box" id="protein-box" ref={containerRef}></div>
         <div className="control-form">

@@ -1,0 +1,18 @@
+{
+	"nav-example":"Examples",
+    "monitor-content":"Monitor System Usage",
+    "chat-content": "AI Chat",
+    "3dmol-content": "3dmol example",
+    "welcome-title":"Welcone Let's think website",
+    "welcome-des1":"This is a sample program developed using React and Fastapi, for learning purposes only.",
+    "welcome-des2":"The server is from Microsoft (1 core 1G, free for new users in the first year), the domain name is from Silicon Cloud (free for new users in the first year), and the logo was designed for free using AIDesign from Penguin. The ssl certificate is a one-year free certificate provided by Tencent Cloud, and the cdn is a free plan using cloudflare. Therefore, this website as a whole is obtained for free. As for the follow-up, it will take a long time, so I will not consider it now.",
+    "openSource":"Open source address: https://github.com/shubihu/letsthink.git",
+    "monitor-p1":"Server system monitoring",
+    "monitor-p2":"Server resources: 1cpu 1 thread, memory 1G",
+    "monitor-cpu":"CPU Usage: ",
+    "monitor-mem":"Memory Usage: ",
+    "chat-p":"AI chat (using the iFlytek Spark model, supporting online queries, such as weather). If you want to use native ChatGPT, here is what the big guys have shared.",
+    "chat-a1":"Click here to go directly to ChatGPT, ",
+    "chat-a2":"More GPTs",
+    "3dmol-p":"This is a 3dmol example, which most people should not be able to use."  
+}
