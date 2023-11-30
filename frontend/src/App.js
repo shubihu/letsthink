@@ -11,7 +11,7 @@ import WelcomePage from './pages/Welcome';
 import ChatApp from './pages/Chat';
 import Monitor from './pages/Monitor';
 import ThreedmolDemo from './pages/3dmolExample';
-// import KnowledgeGraph from './pages/KGGraph';
+import KnowledgeGraph from './pages/KGGraph';
 
 function SidebarItem({ parent, selectedItem, setSelectedItem }) {
   const [isOpen, setIsOpen] = useState(true);
@@ -49,7 +49,7 @@ function App() {
       children: [
         { id: 1, title: 'monitor', content: t('monitor-content') },
         { id: 2, title: 'chat', content: t('chat-content') },
-        // { id: 3, title: 'kg', content: 'knowledge graph example' },
+        { id: 3, title: 'kg', content: t('kg-content') },
         { id: 4, title: '3dmol', content: t('3dmol-content') },
       ],
       isOpen: true,
@@ -103,7 +103,7 @@ function App() {
               <Route path="/:parentTitle/3dmol" element={<ThreedmolDemo />} />
               <Route path="/:parentTitle/monitor" element={<Monitor />} />
               <Route path="/:parentTitle/chat" element={<ChatApp />} />
-              {/* <Route path="/:parentTitle/kg" element={<KnowledgeGraph />} /> */}
+              <Route path="/:parentTitle/kg" element={<KnowledgeGraph />} />
             </Routes>
           </div>
         </div>

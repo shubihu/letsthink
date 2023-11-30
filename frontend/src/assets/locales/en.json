@@ -2,6 +2,7 @@
 	"nav-example":"Examples",
     "monitor-content":"Monitor System Usage",
     "chat-content": "AI Chat",
+    "kg-content": "Knowledge Graph",
     "3dmol-content": "3dmol example",
     "welcome-title":"Welcone Let's think website",
     "welcome-des1":"This is a sample program developed using React and Fastapi, for learning purposes only.",
