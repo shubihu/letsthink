@@ -1,11 +1,11 @@
-import sys
+import sys, os
 import ssl
 import socketio
 from fastapi import FastAPI, BackgroundTasks, Request, WebSocket
 from fastapi.staticfiles import StaticFiles
 import psutil
 from pydantic import BaseModel
-
+from config import ssl_path, ssl_crt, ssl_key
 from chat import chat, chatSpark
 
 class Message(BaseModel):
@@ -15,7 +15,8 @@ class Message(BaseModel):
 app = FastAPI()
 
 context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
-context.load_cert_chain('/home/yahaha/think/ssl/letsthink.top_bundle.crt', '/home/yahaha/think/ssl/letsthink.top.key')
+if os.path.exists(ssl_path):
+    context.load_cert_chain(ssl_crt, ssl_key)
 
 sio = socketio.AsyncServer(async_mode='asgi', cors_allowed_origins='*', ssl_context=context)
 # sio = socketio.AsyncServer(async_mode='asgi', cors_allowed_origins='*')
