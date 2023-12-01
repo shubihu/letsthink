@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import '../css/Chat.css';
 import io from 'socket.io-client';
 import { useCustomTranslation } from '../assets/useCustomTranslation';
-
+import WS_BACKEND_URL from './config';
 
 function ChatApp() {
   const [messages, setMessages] = useState([]);
@@ -15,7 +15,7 @@ function ChatApp() {
 
   useEffect(() => {
     // 创建 WebSocket 连接
-    socketRef.current = io("https://letsthink.top", {path:'/ws/socket.io', autoConnect: true});
+    socketRef.current = io(WS_BACKEND_URL, {path:'/ws/socket.io', autoConnect: true});
     // 监听 WebSocket 接收到的消息
     socketRef.current.on('response', (message) => {
       const newMessage = {

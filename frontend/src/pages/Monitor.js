@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import io from "socket.io-client";
 import * as echarts from 'echarts';
 import { useCustomTranslation } from '../assets/useCustomTranslation';
+import WS_BACKEND_URL from './config';
 
 const Monitor = () => {
   const [cpuUsage, setCpuUsage] = useState("0");
@@ -14,7 +15,7 @@ const Monitor = () => {
 
   useEffect(() => {
     // socketRef.current = io("http://172.190.79.138:8000", {path:'/ws/socket.io', autoConnect: true}); // 替换为FastAPI服务器的地址
-    socketRef.current = io("https://letsthink.top", {path:'/ws/socket.io', autoConnect: true});
+    socketRef.current = io(WS_BACKEND_URL, {path:'/ws/socket.io', autoConnect: true});
     // socketRef.current = io("http://172.190.79.138:8000")
     chartCpuRef.current = echarts.init(chartCpuRef.current);
     chartMemoryRef.current = echarts.init(chartMemoryRef.current);

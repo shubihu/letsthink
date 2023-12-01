@@ -2,3 +2,30 @@
 
 ### 网站demo
 https://letsthink.top
+
+### 使用方法
+
+#### 后端
+- 安装依赖
+```
+cd backend
+pip install -r requirements.txt
+```
+- 测试运行
+```
+uvicorn fastapiApp:app --reload
+```
+
+#### 前端
+- 安装依赖
+`npm install`
+- 测试运行
+`npm run start`
+- 生产部署
+`npm run build`
+
+### Docker
+```
+git clone https://github.com/shubihu/letsthink.git
+docker-compose up -d --build
+```
