@@ -15,5 +15,8 @@
     "chat-p":"AI 聊天(使用的是讯飞星火大模型,支持联网查询,比如天气)。如果想使用原生ChatGPT, 这里有大佬共享的。",
     "chat-a1":"点我直达ChatGPT, ",
     "chat-a2":"更多GPT",
-    "3dmol-p":"这是一个3dmol例子, 一般人应该用不到"
+    "3dmol-p":"这是一个3dmol例子, 一般人应该用不到",
+    "wechat":"微信公众号",
+    "google":"谷歌镜像",
+    "google-scholar":"谷歌学术镜像"
 }

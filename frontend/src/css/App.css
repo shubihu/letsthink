@@ -42,10 +42,12 @@
 }
 
 .link-container {
-  width: 200px;
-  float: right;
+  width: 700px;
+  margin-left: 250px;
+  float: left;
   margin-right: 50px;
 }
+
 .link-container a {
   margin-right: 16px; 
 
@@ -54,7 +56,15 @@
 .link-container a svg{
   width: 30px;
   height: 30px;
-  cursor: pointer; 
+  cursor: pointer;
+  vertical-align: middle; 
+}
+
+.link-container a span{
+  margin-top: 10px;
+  margin-left: 5px;
+  color: black;
+  vertical-align: middle;
 }
 
 .hover-image {

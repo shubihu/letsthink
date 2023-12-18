@@ -15,5 +15,8 @@
     "chat-p":"AI chat (using the iFlytek Spark model, supporting online queries, such as weather). If you want to use native ChatGPT, here is what the big guys have shared.",
     "chat-a1":"Click here to go directly to ChatGPT, ",
     "chat-a2":"More GPTs",
-    "3dmol-p":"This is a 3dmol example, which most people should not be able to use."  
+    "3dmol-p":"This is a 3dmol example, which most people should not be able to use.",
+    "wechat":"WeChat",
+    "google":"Google Mirror",
+    "google-scholar":"Google Scholar Mirror"
 }
