@@ -29,7 +29,7 @@ def chat(message):
         # 获取 AI 的回复
         ai_reply = pollAI(message)
     except:
-        ai_reply = ''
+        ai_reply = '大模型算力紧张，请稍后再试'
 
     return ai_reply
 

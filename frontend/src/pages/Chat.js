@@ -19,7 +19,7 @@ function ChatApp() {
     // 监听 WebSocket 接收到的消息
     socketRef.current.on('response', (message) => {
       const newMessage = {
-        id: messages.length + 1,
+        id: Date.now(),
         text: message,
         timestamp: new Date().toLocaleTimeString(),
         avatar: 'path_to_avatar_image',

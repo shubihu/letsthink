@@ -80,8 +80,7 @@ async def receive_message(sid, message):
     # 例如，可以调用 chat() 函数对消息进行处理
     # 然后将结果发送回前端使用 sio.emit() 方法
     # print(message)
-    # res = chat(message)
-    res = chat(message)
+    res = chat(message['message'])
     await sio.emit('response', res, to=sid)
 
 
