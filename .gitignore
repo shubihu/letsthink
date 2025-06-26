@@ -1,3 +1,4 @@
 *.zip
 nginx_副本.conf
 /frontend/node_modules
+/backend/__pycache__/

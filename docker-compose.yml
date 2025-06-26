@@ -5,17 +5,12 @@ services:
     build: 
       context: ./backend
       dockerfile: Dockerfile
-    
-    # env_file:
-    #   - .env
-    
-    # or 
-    # environment:
-      #- BACKEND_PORT=7001   # if you change the port, make sure to also change the VITE_WS_BACKEND_URL at frontend/.env.local
-      # - OPENAI_API_KEY=your_openai_api_key
-    
+    container_name: backend
+
     ports:
       - "${BACKEND_PORT:-7001}:${BACKEND_PORT:-7001}"
+    expose:
+      - "7001"
 
     command: uvicorn fastapiApp:app --host 0.0.0.0 --port ${BACKEND_PORT:-7001}
   
@@ -23,9 +18,11 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+    container_name: frontend
     environment:
       - PORT=5002
       - HOST=0.0.0.0
       - NODE_OPTIONS=--openssl-legacy-provider
+      - VITE_WS_BACKEND_URL=http://backend:7001
     ports:
       - "5002:5002"
