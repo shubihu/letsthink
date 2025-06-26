@@ -6,7 +6,7 @@ from fastapi.staticfiles import StaticFiles
 import psutil
 from pydantic import BaseModel
 from config import ssl_path, ssl_crt, ssl_key
-from chat import chat, chatSpark
+from chat import chat
 
 class Message(BaseModel):
     text: str
@@ -81,7 +81,7 @@ async def receive_message(sid, message):
     # 然后将结果发送回前端使用 sio.emit() 方法
     # print(message)
     # res = chat(message)
-    res = chatSpark(message)
+    res = chat(message)
     await sio.emit('response', res, to=sid)
 
 
