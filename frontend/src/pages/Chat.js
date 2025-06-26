@@ -82,7 +82,7 @@ function ChatApp() {
 
   return (
     <div className="chat-app">
-      <p>{t('chat-p')}<a href="https://chat1.geekgpt.org">{t('chat-a1')}</a> <a href='https://chat-shared3.zhile.io/shared.html?v=2'>{t('chat-a2')}</a></p>
+      <p>{t('chat-p')} </p>
       <div className="message-list">        
         {messages.map((message) => (
           <div

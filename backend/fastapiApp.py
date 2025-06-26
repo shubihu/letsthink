@@ -18,7 +18,7 @@ context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
 if os.path.exists(ssl_path):
     context.load_cert_chain(ssl_crt, ssl_key)
 
-sio = socketio.AsyncServer(async_mode='asgi', cors_allowed_origins='*', ssl_context=context)
+sio = socketio.AsyncServer(async_mode='asgi', cors_allowed_origins=['*'], ssl_context=context)
 # sio = socketio.AsyncServer(async_mode='asgi', cors_allowed_origins='*')
 socket_app = socketio.ASGIApp(sio)
 
