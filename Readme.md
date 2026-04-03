@@ -13,7 +13,7 @@ pip install -r requirements.txt
 ```
 - 测试运行
 ```
-uvicorn fastapiApp:app --reload
+uvicorn fastapiApp:app --reload --port 7001
 ```
 
 #### 前端

@@ -80,13 +80,14 @@ async def receive_message(sid, message):
     # 例如，可以调用 chat() 函数对消息进行处理
     # 然后将结果发送回前端使用 sio.emit() 方法
     # print(message)
-    res = chat(message['message'])
+    #res = chat(message['message'])
+    res = '这是测试内容'
     await sio.emit('response', res, to=sid)
 
 
 
 if __name__ == '__main__':
-    uvicorn.run(app, host="0.0.0.0", port=8000, ssl_certfile='/home/yahaha/think/ssl/letsthink.top_bundle.crt', ssl_keyfile='/home/yahaha/think/ssl/letsthink.top.key')
+    uvicorn.run(app, host="0.0.0.0", port=7001, ssl_certfile='/home/yahaha/think/ssl/letsthink.top_bundle.crt', ssl_keyfile='/home/yahaha/think/ssl/letsthink.top.key')
 
 
 
