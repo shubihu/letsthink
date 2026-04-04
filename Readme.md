@@ -35,3 +35,5 @@ uvicorn fastapiApp:app --reload --port 7001
 git clone https://github.com/shubihu/letsthink.git
 docker-compose up -d --build
 ```
+
+启动后访问：localhost:5002
